@@ -2,12 +2,16 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
 @SpringBootApplication
-public class SpringActuatorDemoApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringActuatorDemoApplication.class, args);
-	}
-
+public class SpringActuatorDemoApplication  extends SpringBootServletInitializer {
+	   @Override
+	   protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
+	      return application.sources(SpringActuatorDemoApplication.class);
+	   }
+	   public static void main(String[] args) {
+	      SpringApplication.run(SpringActuatorDemoApplication.class, args);
+	   }
 }
