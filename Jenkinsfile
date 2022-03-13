@@ -9,6 +9,7 @@ pipeline {
             steps {
                 echo 'Building..'
                 bat 'mvn clean package' 
+                stash includes: 'target/*.jar', name: 'targetfiles'
             }
         }
         stage('Test') {
@@ -20,8 +21,11 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                bat 'javaw -jar  spring-actuator-jenkins-0.0.1-SNAPSHOT.jar'
-            }
+                script{
+                       unstash 'targetfiles'
+                       sh 'javaw -jar'
+                     }
+                }
         }
          stage('Health Check') {
             steps {
