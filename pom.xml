@@ -10,10 +10,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>spring-actuator-demo</artifactId>
+	<artifactId>spring-actuator-jenkins</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-actuator-demo</name>
-	<description>Demo project for Spring Boot</description>
+	<name>spring-actuator-jenkins</name>
+	<description>Demo project for Spring Boot with jenkins</description>
 	<properties>
 		<java.version>8</java.version>
 	</properties>
